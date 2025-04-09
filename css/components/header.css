@@ -10,13 +10,3 @@ header {
     justify-content: space-between;
 
 }
-
-.search__button {
-    border: none;
-    outline: none;
-    background: none;
-}
-
-.search__button svg {
-    
-}

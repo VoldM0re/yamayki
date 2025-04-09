@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    gap: 30px;
     background-color: var(--white);
     color: var(--black);
     font-weight: 400;
@@ -27,7 +28,41 @@ main {
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 40px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 18px;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 14px;
+}
+
+button {
+    display: flex;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center;
+    padding-block: 20px;
+    border-radius: var(--border-radius);
+    background: var(--black);
+    box-shadow: var(--shadow);
+    color: var(--light-grey);
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
 }
 
 @media (min-width: 359px) {}

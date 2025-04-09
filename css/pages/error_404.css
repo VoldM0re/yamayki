@@ -1,0 +1,60 @@
+/* Импорт компонентов */
+@import '../../css/base/base.css';
+
+@import '../../css/components/header.css';
+@import '../../css/components/footer.css';
+
+.error__block-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.error__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    gap: 10px;
+    border: 2px solid var(--red);
+    border-radius: var(--border-radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+
+}
+
+.error__block-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--red);
+}
+
+.error__block-title h2 {
+    font-weight: 800;
+    font-size: 16px;
+    text-align: center;
+}
+
+.error__block-description {
+    color: var(--black);
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
+@media (min-width: 359px) {}
+
+@media (min-width: 479px) {}
+
+@media (min-width: 659px) {}
+
+@media (min-width: 767px) {}
+
+@media (min-width: 1023px) {}
+
+@media (min-width: 1279px) {}
