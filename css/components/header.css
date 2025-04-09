@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+}
+
+.header__top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+}
+
+.search__button {
+    border: none;
+    outline: none;
+    background: none;
+}
