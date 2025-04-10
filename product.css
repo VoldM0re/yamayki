@@ -1,0 +1,36 @@
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px
+}
+.shirts {
+    display: flex;
+}
+.shirt {
+    display: flex;
+}
+.estimate-price {
+    display: flex;
+    justify-content: space-between;
+}
+.estimate {
+    display: flex;
+}
+.size-chart {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.sizes {
+    display: flex;
+    gap: 10px;
+}
+.sizes-num {
+    display: flex;
+    flex-direction: column;
+}
+.actions {
+    display: flex;
+    justify-content: space-between;
+}

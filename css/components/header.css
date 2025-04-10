@@ -9,15 +9,16 @@ header {
     display: flex;
     align-items: end;
     align-self: stretch;
+    justify-content: space-between;
+    overflow: hidden;
     border-radius: 20px;
 }
 
 .header__menu-link {
     display: flex;
-    flex: 1 0 0;
     align-items: center;
     justify-content: center;
-    padding: 25px 0;
+    padding: 20px 0;
     gap: 15px;
     font-size: 24px;
 }
@@ -26,22 +27,11 @@ header {
     display: none;
 }
 
-
-
-
 .header__menu-link-title {
     display: none;
     color: var(--black);
     font-weight: 700;
 }
-
-@media (min-width: 359px) {}
-
-@media (min-width: 479px) {}
-
-@media (min-width: 659px) {}
-
-@media (min-width: 767px) {}
 
 @media (min-width: 1023px) {
     .desktop-logo {
@@ -54,6 +44,10 @@ header {
 
     .header__menu {
         border: 3px solid var(--black);
+    }
+
+    .header__menu-link {
+        flex: 1 0 0;
     }
 
     .header__menu-link:where(:not(:first-child)) {
@@ -72,5 +66,3 @@ header {
         display: none;
     }
 }
-
-@media (min-width: 1279px) {}

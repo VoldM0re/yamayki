@@ -1,0 +1,188 @@
+/* Импорт компонентов */
+@import '../../css/base/base.css';
+
+@import '../../css/components/header.css';
+@import '../../css/components/footer.css';
+@import '../../css/components/cards.css';
+
+.current-catalogue {
+    background: var(--accent);
+}
+
+.sortings-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid var(--black);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.menu-link {
+    display: flex;
+    flex: 1 0 0;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
+    color: var(--black);
+    font-weight: 700;
+    font-size: clamp(0.625rem, 0.5rem + 0.625vw, 1.25rem);
+}
+
+.menu-link:where(:not(:first-child)) {
+    border-left: 1px solid var(--black);
+}
+
+.sortings {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 10px;
+}
+
+.sorting {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 5px;
+}
+
+.sorting_select {
+    align-self: stretch;
+    padding: 5px 10px;
+    border: 1px solid var(--black);
+    border-radius: var(--border-radius);
+    background: var(--white);
+    background: none;
+    box-shadow: var(--shadow);
+
+}
+
+.price {
+    display: flex;
+    overflow: hidden;
+    border: 1px solid var(--black);
+    border-radius: var(--border-radius);
+    background: none;
+    box-shadow: var(--shadow);
+}
+
+.price_input {
+    align-self: stretch;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    font-size: clamp(0.625rem, 0.5rem + 0.625vw, 1.25rem);
+}
+
+.price_input:where(:not(:first-child)) {
+    border-left: 1px solid var(--black) !important;
+}
+
+.sorting-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border: 1px solid var(--black);
+    border-radius: var(--border-radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.sorting-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    gap: 5px;
+    color: var(--black);
+    font-weight: 600;
+    font-size: clamp(0.625rem, 0.5rem + 0.625vw, 1.25rem);
+}
+
+.sorting_select {
+    font-size: clamp(0.625rem, 0.5rem + 0.625vw, 1.25rem);
+}
+
+.small-title {
+    color: var(--black, #212121);
+    font-weight: 700;
+    font-size: clamp(0.75rem, 0.5rem + 1.25vw, 2rem);
+}
+
+.sorting-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+@media (min-width: 359px) {}
+
+@media (min-width: 479px) {}
+
+@media (min-width: 659px) {}
+
+@media (min-width: 767px) {}
+
+@media (min-width: 1023px) {
+
+    .sortings-wrapper {
+        gap: 40px;
+    }
+
+    .menu {
+        border: 3px solid var(--black);
+    }
+
+    .menu-link:where(:not(:first-child)) {
+        border-left: 3px solid var(--black);
+    }
+
+    .price_input:where(:not(:first-child)) {
+        border-left: 3px solid var(--black) !important;
+    }
+
+    .menu-link {
+        padding: 20px;
+    }
+
+    .sorting-box {
+        border: 3px solid var(--black);
+    }
+
+    .sorting-item {
+        padding: 15px;
+    }
+
+    .sorting_select {
+        padding: 10px;
+        border: 3px solid var(--black);
+    }
+
+    .price_input {
+        padding: 10px;
+    }
+
+    .price {
+        border: 3px solid var(--black);
+    }
+
+    .sorting-buttons {
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1279px) {}
