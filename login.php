@@ -6,27 +6,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/svg/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/pages/index.css">
+    <link rel="stylesheet" href="css/pages/login.css">
     <title>ЯМайки - Вход</title>
 </head>
 
 <body>
     <?php require_once 'includes/components/header.php'; ?>
-    <form action="includes/log.inc.php" method="post">
-        <h1>Войти</h1>
-        <p>Почта:</p>
-        <input type="text" name="email" placeholder="nagiev@mail.ru"><br>
-        <p>Пароль:</p>
-        <input type="password" name="password" placeholder="Введите пароль"><br><br>
-        <button type="sudmit">Отправить</button>
-        <?php if (isset($_SESSION['error'])) {
-            echo "
-            <div class='error'>
-                <p>" . $_SESSION['error'] . "</p>
-            </div>";
-            unset($_SESSION['error']);
-        } ?>
-    </form>
+    <main>
+        <section class="container">
+            <h2 class="section-title">Войдите в аккаунт</h2>
+            <form class="sign_form" action="includes/log.inc.php" method="post">
+                <div class="sign_form__block">
+                    <p class="sign_form__block-title">Почта</p>
+                    <input class="sign__form-input" type="email" name="email" placeholder="post@mail.ru" required">
+                </div>
+                <div class="sign_form__block">
+                    <p class="sign_form__block-title">Пароль</p>
+                    <input class="sign__form-input" type="password" name="password" placeholder="Введите пароль" required>
+                </div>
+                <button class="button">Войти</button>
+
+                <?php if (isset($_SESSION['error'])) {
+                    echo "
+                    <div class='error'>
+                        <p>" . $_SESSION['error'] . "</p>
+                    </div>";
+                    unset($_SESSION['error']);
+                } ?>
+                <p class="sign_link-block">Впервые у нас?<a class="sign_link" href="registration.php">Зарегистрироваться</a></p>
+            </form>
+        </section>
+    </main>
+    <?php require_once 'includes/components/footer.php'; ?>
 </body>
 
 </html>

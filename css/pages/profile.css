@@ -3,3 +3,103 @@
 
 @import '../../css/components/header.css';
 @import '../../css/components/footer.css';
+@import '../../css/components/sign_form.css';
+
+.order {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    border-radius: var(--border-radius);
+    background: var(--white);
+}
+
+.order-image {
+    align-self: stretch;
+    aspect-ratio: 1/1;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.order__details {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.order__details-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.order__details-main {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.order__details-price {
+    color: var(--black);
+    font-weight: 800;
+    font-size: clamp(0.875rem, 0.875rem + 1.5vw, 1.75rem);
+}
+
+.order__details-name {
+    align-self: stretch;
+    min-width: 100px;
+    color: var(--black);
+    font-weight: 700;
+    font-size: clamp(0.625rem, 0.625rem + 1vw, 1.25rem);
+}
+
+.order__details-size {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: clamp(0.625rem, 0.625rem + 0.5vw, 0.875rem);
+}
+
+.order__details-addinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: stretch;
+    justify-content: space-between;
+    text-align: end;
+}
+
+.order__details-date {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 0.875rem);
+}
+
+.order__details-count {
+    color: var(--black);
+    font-weight: 500;
+    font-size: clamp(0.625rem, 0.625rem + 0.5vw, 0.875rem);
+}
+
+@media (min-width: 479px) {
+    .order {
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
+@media (min-width: 767px) {
+    .order__details {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1023px) {
+    .order {
+        align-self: center;
+        width: 600px;
+    }
+}

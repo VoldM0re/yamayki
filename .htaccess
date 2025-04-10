@@ -13,7 +13,7 @@ RewriteEngine On
 
 # Если URL содержит .php и после него идёт что-то ещё
 RewriteCond %{REQUEST_URI} ^(.+\.php)/.*$
-RewriteRule ^(.+\.php)/.*$ /$1 [R=301,L]
+RewriteRule ^(.+\.php)/.*$ /yamayki/$1 [R=301,L]
 
 # Удаляем конечный слеш для не-директорий
 RewriteCond %{REQUEST_FILENAME} !-d

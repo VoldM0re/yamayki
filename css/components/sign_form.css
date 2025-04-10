@@ -1,0 +1,72 @@
+.sign_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sign_form__block {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sign_form__block-title {
+    color: var(--black);
+    font-weight: 700;
+    font-size: clamp(0.875rem, 0.75rem + 0.625vw, 1.5rem);
+}
+
+.sign__form-input {
+    padding: 10px;
+    border: 1px solid var(--black);
+    border-radius: var(--border-radius);
+    outline: none;
+    background: var(--white);
+    font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
+}
+
+.sign_link-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
+}
+
+.sign_link {
+    color: var(--green);
+}
+
+.sign_link:hover {
+    text-decoration: underline;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-block: 15px;
+    border-radius: var(--border-radius);
+    outline: 2px solid var(--red);
+    outline-offset: -2px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    color: var(--red);
+    font-weight: 700;
+    font-size: clamp(12px, 1.5vw, 24px);
+}
+
+@media (min-width: 1023px) {
+    .sign_form {
+        align-self: center;
+        width: 600px;
+        gap: 20px;
+    }
+
+    .sign__form-input {
+        padding: 20px;
+        border: 2px solid var(--black);
+        border-radius: var(--border-radius);
+    }
+}

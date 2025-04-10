@@ -17,6 +17,7 @@
 
         </section>
     </main>
+    <?php require_once 'includes/components/footer.php'; ?>
 </body>
 
 </html>
