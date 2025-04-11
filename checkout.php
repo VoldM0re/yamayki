@@ -114,49 +114,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/pages/index.css">
+    <link rel="stylesheet" href="css/pages/checkout.css">
     <title>Оформление заказа - ЯМайки</title>
 </head>
 
 <body>
     <?php require_once 'includes/components/header.php'; ?>
     <main>
-        <section class="container">
+        <section class="checkout-wrapper container">
             <h1>Оформление заказа</h1>
 
             <!-- Форма для ввода информации -->
             <form method="post">
                 <!-- Имя, фамилия, отчество, почта (заполнены автоматически) -->
                 <div class="form-group">
-                    <label for="name">Имя*</label>
+                    <label for="name">Имя</label>
                     <input type="text" id="name" name="name" value="<?= htmlspecialchars($user['name'] ?? '') ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="surname">Фамилия*</label>
+                    <label for="surname">Фамилия</label>
                     <input type="text" id="surname" name="surname" value="<?= htmlspecialchars($user['surname'] ?? '') ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="patronymic">Отчество*</label>
+                    <label for="patronymic">Отчество</label>
                     <input type="text" id="patronymic" name="patronymic" value="<?= htmlspecialchars($user['patronymic'] ?? '') ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Почта*</label>
+                    <label for="email">Почта</label>
                     <input type="email" id="email" name="email" value="<?= htmlspecialchars($user['email'] ?? '') ?>" required>
                 </div>
 
                 <!-- Адрес и телефон (вводятся пользователем) -->
                 <div class="form-group">
-                    <label for="address">Адрес*</label>
+                    <label for="address">Адрес</label>
                     <input type="text" id="address" name="address" placeholder="Введите ваш адрес" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Телефон*</label>
+                    <label for="phone">Телефон</label>
                     <input type="tel" id="phone" name="phone" placeholder="+7 123 456 78 90" required>
                 </div>
 
                 <!-- Способ доставки -->
                 <div class="form-group">
-                    <label>Способ доставки*</label>
+                    <label>Способ доставки</label>
                     <div class="delivery-options">
                         <label>
                             <input type="radio" name="delivery_method" value="self_pickup" required>
@@ -178,6 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </section>
     </main>
+    <?php require_once 'includes/components/footer.php'; ?>
 </body>
 
 </html>

@@ -1,0 +1,140 @@
+/* Импорт компонентов */
+@import '../../css/base/base.css';
+
+@import '../../css/components/header.css';
+@import '../../css/components/footer.css';
+
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-wrapper {
+    text-align: start;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 0.7rem + 0.5vw, 1rem);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.1rem);
+    transition: border-color 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus {
+    border-color: #555;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+.form-group .delivery-options {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.delivery-options label {
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    color: #333;
+    font-weight: normal;
+    font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.1rem);
+    cursor: pointer;
+}
+
+.delivery-options label:last-child {
+    margin-bottom: 0;
+}
+
+.delivery-options input[type="radio"] {
+    position: static;
+    width: auto;
+    margin-right: 8px;
+    padding: 0;
+    border: none;
+    vertical-align: middle;
+    opacity: 1;
+}
+
+.checkout-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    font-size: clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.checkout-button:hover {
+    background-color: #555;
+}
+
+.order-summary {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: clamp(0.85rem, 0.75rem + 0.5vw, 1.05rem);
+}
+
+.summary-item span:last-child {
+    color: #333;
+    font-weight: 600;
+}
+
+.summary-item.total {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+    color: #000;
+    font-weight: bold;
+    font-size: clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
+}
+
+.summary-item.total span:last-child {
+    color: #000;
+}
