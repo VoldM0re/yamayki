@@ -75,7 +75,8 @@ if (!$product) {
                                 <button type="submit" class="add-to-cart">В корзину</button>
                             </form>
                             <?php else: ?>
-                            <p>Чтобы добавить товар в корзину, <a href="login.php">войдите</a> или <a href="registration.php">зарегистрируйтесь</a>.</p>
+                            <p class="log_to_add">Чтобы добавить товар в корзину, <a href="login.php">войдите</a> или <a href="registration.php">зарегистрируйтесь</a>.
+                            </p>
                             <?php endif; ?>
                         </div>
                     </div>
