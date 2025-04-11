@@ -5,7 +5,7 @@ session_start();
 
 // Проверяем, что пользователь авторизован
 if (!isset($_SESSION['user'])) {
-    die("Ошибка: Вы должны войти в аккаунт, чтобы просмотреть корзину.");
+    redirect('login.php');
 }
 
 $user_id = $_SESSION['user']['id'];
