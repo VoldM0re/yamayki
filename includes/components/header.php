@@ -22,9 +22,7 @@
         </svg>
     </a>
 
-
     <nav class="header__menu">
-
         <a class="header__menu-link catalogue-link" href="catalogue.php">
             <svg width="27" height="19" viewBox="0 0 27 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#212121" fill-rule="evenodd" clip-rule="evenodd"
@@ -42,27 +40,24 @@
 
         <a class="header__menu-link logo-icon" href="./">
             <svg width="96" height="30">
-                <use href='assets/svg/sprite_header.svg#logo'></use>
+                <use href='/yamayki/assets/svg/sprite_header.svg#logo'></use>
             </svg>
         </a>
 
-        <button class="search__button header__menu-link">
-            <svg width="24" height="24">
-                <use href='assets/svg/sprite_header.svg#search'></use>
-            </svg>
-            <p class="header__menu-link-title">Поиск</p>
-        </button>
+        <form class="search__button-form" action="search.php" method='get'>
+            <input type="text" name="query" placeholder='Поиск по имени' class="search__button header__menu-link">
+        </form>
 
         <a class="header__menu-link" href="cart.php">
             <svg width="24" height="24">
-                <use href='assets/svg/sprite_header.svg#catalogue'></use>
+                <use href='/yamayki/assets/svg/sprite_header.svg#catalogue'></use>
             </svg>
             <p class="header__menu-link-title">Корзина</p>
         </a>
 
         <a class="header__menu-link" href="profile.php">
             <svg width="24" height="24">
-                <use href='assets/svg/sprite_header.svg#profile'></use>
+                <use href='/yamayki/assets/svg/sprite_header.svg#profile'></use>
             </svg>
             <p class="header__menu-link-title"><?= $_SESSION['user']['name'] ?? 'Профиль' ?></p>
         </a>

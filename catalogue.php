@@ -1,5 +1,11 @@
-<?php session_start();
-require_once 'includes/helpers.php'; ?>
+<?php
+session_start();
+require_once 'includes/db.php';
+
+// Получение всех товаров из базы данных
+$stmt = $pdo->query("SELECT * FROM products");
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -15,7 +21,7 @@ require_once 'includes/helpers.php'; ?>
 <body>
     <?php require_once 'includes/components/header.php'; ?>
     <main>
-        <section class="sortings-wrapper container">
+        <!-- <section class="sortings-wrapper container">
             <h2 class="section-title">Каталог</h2>
             <nav class="menu">
                 <a class="menu-link current-catalogue" href="">Футболки</a>
@@ -85,11 +91,11 @@ require_once 'includes/helpers.php'; ?>
             </div>
             <div class="sorting-buttons">
                 <button class="button">Применить</button>
-                <a class="button red-button" href=".">Сбросить фильтры</a>
+                <a class="button red-button" href="#">Сбросить фильтры</a>
             </div>
-        </section>
+        </section> -->
 
-        <section class="container">
+        <!-- <section class="container">
             <div class="cards">
                 <div class="card">
                     <div class="card__product">
@@ -161,6 +167,31 @@ require_once 'includes/helpers.php'; ?>
                     </div>
                     <a class="button" href=""></a>
                 </div>
+            </div>
+        </section> -->
+        <section class="container products">
+            <h2>Каталог товаров</h2>
+            <div class="shirts">
+                <!-- Цикл для отображения товаров -->
+                <?php if (!empty($products)): ?>
+                <?php foreach ($products as $product): ?>
+                <div class="shirt">
+                    <a href="product.php?product_id=<?= htmlspecialchars($product['id']) ?>">
+                        <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['product_name']) ?>">
+                    </a>
+                    <div class="descr_product">
+                        <a href="product.php?product_id=<?= htmlspecialchars($product['id']) ?>">
+                            <?= htmlspecialchars($product['product_name']) ?>
+                        </a>
+                        <div class="estimate_price">
+                            <p><?= htmlspecialchars($product['price']) ?> ₽</p>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+                <?php else: ?>
+                <p>Товары не найдены.</p>
+                <?php endif; ?>
             </div>
         </section>
     </main>

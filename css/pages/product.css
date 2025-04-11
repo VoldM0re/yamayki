@@ -1,0 +1,98 @@
+@import '../../css/base/base.css';
+
+@import '../../css/components/header.css';
+@import '../../css/components/footer.css';
+
+.products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.shirt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.shirt-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.base-info {
+    text-align: left;
+}
+
+.base-info h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+.estimate-price p {
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-to-cart-form label {
+    color: #333;
+    font-size: 16px;
+}
+
+.add-to-cart-form select {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #333;
+}
+
+/* Кнопка "Выйти из аккаунта" */
+.logout-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid red;
+    border-radius: 8px;
+    background-color: transparent;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: red;
+    color: white;
+}

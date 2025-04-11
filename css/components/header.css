@@ -33,6 +33,18 @@ header {
     font-weight: 700;
 }
 
+.search__button-form {
+    display: none;
+    border-left: 3px solid var(--black);
+}
+
+.search__button {
+    padding-inline: 20px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
 @media (min-width: 1023px) {
     .desktop-logo {
         display: block !important;
@@ -59,6 +71,10 @@ header {
     }
 
     .catalogue-link {
+        display: flex;
+    }
+
+    .search__button-form {
         display: flex;
     }
 

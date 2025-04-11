@@ -29,7 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'surname' => $user['surname'],
                     'patronymic' => $user['patronymic'],
                     'address' => $user['address'],
-                    'phone' => $user['phone']
+                    'phone' => $user['phone'],
+                    'role' => $user['role']
                 ];
                 redirect('../profile.php');
             } else {

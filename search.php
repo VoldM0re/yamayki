@@ -1,8 +1,10 @@
 <?php
 session_start();
 require_once 'includes/db.php';
-
-$stmt = $pdo->query("SELECT * FROM products ORDER BY id DESC LIMIT 4;");
+// Получение всех товаров из базы данных
+$query = '%' . $_GET['query'] . '%';
+$stmt = $pdo->prepare("SELECT * FROM `products` WHERE `product_name` LIKE :query");
+$stmt->execute([':query' => $query]);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -16,71 +18,13 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>ЯМайки - Главная</title>
 </head>
 
-<style>
-.slider {
-    position: relative;
-    max-width: 900px;
-    margin: 20px auto;
-    overflow: hidden;
-    aspect-ratio: 16 / 6;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.slider .slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-}
-
-.slider .slide.active {
-    display: block;
-    opacity: 1;
-    z-index: 1;
-}
-
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 4px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-.slider-btn:hover {
-    opacity: 1;
-}
-
-.slider-btn.prev {
-    left: 15px;
-}
-
-.slider-btn.next {
-    right: 15px;
-}
-</style>
-
 <body>
     <?php require_once 'includes/components/header.php'; ?>
-
     <main>
         <section class="container products">
-            <h2>Новинки</h2>
+            <h2>Результаты поиска</h2>
             <div class="shirts">
+                <!-- Цикл для отображения товаров -->
                 <?php if (!empty($products)): ?>
                 <?php foreach ($products as $product): ?>
                 <div class="shirt">

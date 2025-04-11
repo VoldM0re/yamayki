@@ -63,14 +63,13 @@ try {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/svg/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/pages/index.css">
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="css/pages/cart.css">
     <title>Корзина - ЯМайки</title>
 </head>
 
@@ -93,7 +92,7 @@ try {
                         <div class="cart-item-info">
                             <div class="price-and-name">
                                 <span class="price"><?= htmlspecialchars($item['price']) ?> ₽</span>
-                                <h3><?= htmlspecialchars($item['product_name']) ?></h3>
+                                <p><?= htmlspecialchars($item['product_name']) ?></p>
                             </div>
                             <p class="size">Размер: <?= htmlspecialchars($item['size']) ?></p>
                             <div class="quantity-controls">

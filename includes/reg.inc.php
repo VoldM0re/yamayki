@@ -14,6 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["error"] = "Ваши пароли не совпадают!";
     }
 
+    $stmt = $pdo->prepare("SELECT `name` FROM `users` WHERE `email` = :email");
+    $stmt->execute([':email' => $email]);
+    $isOccupied = $stmt->fetch();
+    if ($isOccupied) {
+        $_SESSION["error"] = "Такой email уже занят!";
+    }
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION["error"] = "Некорректный email!";
     }
@@ -31,9 +38,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ':email' => $email,
                 ':password' => password_hash($password, PASSWORD_BCRYPT)
             ]);
-            $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $stmt = $pdo->prepare("SELECT `id` FROM `users` WHERE `email` = :email");
+            $stmt->execute([':email' => $email]);
+            $user_id = $stmt->fetch(PDO::FETCH_ASSOC);
+
             $_SESSION['user'] = [
-                'name' => $name
+                'name' => $name,
+                'id' => $user_id['id'],
+                'email' => $user['email'],
+                'surname' => '',
+                'patronymic' => '',
+                'address' => '',
+                'phone' => '',
+                'role' => 'user'
             ];
             redirect("../index.php");
         } else {
